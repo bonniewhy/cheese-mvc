@@ -7,13 +7,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 @Controller
 @RequestMapping("cheese")
 public class CheeseController {
 
     // "Static member" of the cheese controller... This data will only exist while the application is running. If you stop it, it's gone. NOTE A SUB for a database.
-    static ArrayList<String> cheeses = new ArrayList<>();
+    static HashMap<String, String> cheeses = new HashMap<>();
 
     @RequestMapping(value = "")
     public String index(Model model) {
@@ -36,9 +37,9 @@ public class CheeseController {
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public String processAddCheeseForm(@RequestParam String cheeseName) {
+    public String processAddCheeseForm(@RequestParam String cheeseName, @RequestParam String cheeseDescription) {
 
-        cheeses.add(cheeseName);
+        cheeses.put(cheeseName, cheeseDescription);
 
         // Redirect to /cheese; leaving it "empty" means it redirects to the controller with value = "" aka index
         return "redirect:";

@@ -6,12 +6,31 @@
 <h1 th:text="${title}"></h1>
 <nav th:replace="fragments :: navigation"></nav>
 
+
 <form method="post">
-
-    <input type="text" name="cheeseName" />
-    <input type="submit" value="Add Cheese" />
-
+<table>
+    <tr>
+        <td>
+            <label for="cheeseName"> Cheese:
+            <input type="text" id="cheeseName" name="cheeseName" />
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="cheeseDescription"> Description:
+                <input type="text" id="cheeseDescription" name="cheeseDescription" />
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Add Cheese!" />
+        </td>
+    </tr>
+</table>
 </form>
+
 
 </body>
 </html>

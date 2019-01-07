@@ -1,3 +1,25 @@
 body {
     font-family: sans-serif;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-image: url("cheesegraterbackground.png");
+}
+
+table {
+    width: 100%;
+    background-color: #fdebb2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th {
+    height: 50px;
+    background-color: #f46814;
+}
+
+td {
+    height: 35px;
+    vertical-align: middle;
 }
