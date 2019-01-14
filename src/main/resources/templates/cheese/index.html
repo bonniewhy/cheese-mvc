@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body>
+<body class="container">
 
-    <h1 th:text="${title}"></h1>
+    <h1 th:text="${title}">Default Title</h1>
     <nav th:replace="fragments :: navigation"></nav>
 
         <p th:unless="${cheeses} and ${cheeses.size()}">No cheese. D:</p>
 
-        <table>
-            <tr>
-                <th>Type of Cheese</th>
-                <th>Kick Ass Description</th>
-            </tr>
-            <tr th:each="cheese : ${cheeses}">
-                <td th:text="${cheese.key}"></td>
-                <td th:text="${cheese.value}"></td>
-            </tr>
-        </table>
+    <table class="table">
+        <tr>
+            <th>Type of Cheese</th>
+            <th>Kick Ass Description</th>
+        </tr>
+        <tr th:each="cheese : ${cheeses}">
+            <td th:text="${cheese.name}"></td>
+            <td th:text="${cheese.description}"></td>
+        </tr>
+    </table>
 
 </body>
 </html>
